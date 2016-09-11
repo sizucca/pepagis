@@ -13,7 +13,7 @@ var cssPath      = './pepagis_stuffs/assets/stylesheets/**/*.css';
 
 // compile path
 var cssFrameworkSrc  = '../pepabo.css-framework/project_sizucca/stylesheets/scss/**/*.scss';
-var cssFrameworkDest = './pepagis_stuffs/assets/stylesheets/css/framework/';
+var cssFrameworkDest = './pepagis_stuffs/assets/stylesheets/framework/';
 
 // task list
 gulp.task('default', ['browser-sync'], function(){
