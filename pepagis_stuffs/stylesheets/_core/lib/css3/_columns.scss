@@ -1,0 +1,113 @@
+/*doc
+---
+title    : columns()
+parent   : _04_css3
+name     : columns
+category : index
+---
+
+| IE    | Chrome | Firefox | Safari | Opera  | iOS   | Android | Can I use                                                           |
+| :---: | :----: | :-----: | :----: | :----: | :---: | :-----: | :------------------------------------------------------------------ |
+| `10`  | `OK`   | `OK`    | `3.1`  | `15`   | `3.2` | `2.1`   | [CSS3 Multiple column layout](http://caniuse.com/#feat=multicolumn) |
+
+| @mixin 名                  | @mixin 引数値              | 備考 |
+| :------------------------- | :------------------------- | :--- |
+| `CSS プロパティ名` と 同じ | `CSS プロパティ値` と 同じ | -    |
+
+```scss:@mixin
+@mixin columns($arg: auto) {
+  ...
+}
+@mixin column-count($int: auto) {
+  ...
+}
+@mixin column-gap($length: normal) {
+  ...
+}
+@mixin column-fill($arg: auto) {
+  ...
+}
+@mixin column-rule($arg) {
+  ...
+}
+@mixin column-rule-color($color) {
+  ...
+}
+@mixin column-rule-style($style: none) {
+  ...
+}
+@mixin column-rule-width ($width: none) {
+  ...
+}
+@mixin column-span($arg: none) {
+  ...
+}
+@mixin column-width($length: auto) {
+  ...
+}
+```
+
+```scss:scss（使用例）
+.class-name {
+  @include columns(250px auto);
+}
+```
+
+```css:css（コンパイル結果）
+.class-name {
+  -webkit-columns: 250px auto;
+  -moz-columns: 250px auto;
+  columns: 250px auto;
+}
+```
+
+*/
+// ==================================================
+
+@mixin columns($arg: auto) {
+  // <column-count> || <column-width>
+  @include _prefixer(columns, $arg, webkit moz spec);
+}
+
+@mixin column-count($int: auto) {
+  // auto || integer
+  @include _prefixer(column-count, $int, webkit moz spec);
+}
+
+@mixin column-gap($length: normal) {
+  // normal || length
+  @include _prefixer(column-gap, $length, webkit moz spec);
+}
+
+@mixin column-fill($arg: auto) {
+  // auto || length
+  @include _prefixer(column-fill, $arg, webkit moz spec);
+}
+
+@mixin column-rule($arg) {
+  // <border-width> || <border-style> || <color>
+  @include _prefixer(column-rule, $arg, webkit moz spec);
+}
+
+@mixin column-rule-color($color) {
+  @include _prefixer(column-rule-color, $color, webkit moz spec);
+}
+
+@mixin column-rule-style($style: none) {
+  // none | hidden | dashed | dotted | double | groove | inset | inset | outset | ridge | solid
+  @include _prefixer(column-rule-style, $style, webkit moz spec);
+}
+
+@mixin column-rule-width($width: none) {
+  @include _prefixer(column-rule-width, $width, webkit moz spec);
+}
+
+@mixin column-span($arg: none) {
+  // none || all
+  @include _prefixer(column-span, $arg, webkit moz spec);
+}
+
+@mixin column-width($length: auto) {
+  // auto || length
+  @include _prefixer(column-width, $length, webkit moz spec);
+}

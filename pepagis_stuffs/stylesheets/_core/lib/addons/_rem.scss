@@ -1,0 +1,122 @@
+/*doc
+---
+title    : rem()
+parent   : _05_addons
+name     : rem
+category : index
+---
+
+| 引数          | 初期値 | 値                                   | 備考                                                                     |
+| :------------ | :----- | :----------------------------------- | :----------------------------------------------------------------------- |
+| `$properties` | なし   | `<Map>` `<List>`                     | -                                                                        |
+| `$values`     | なし   | `$properties` の型による（備考参照） | `<Map>` ... なし<br>`<List>` ... プロパティ `$properties` に指定可能な値 |
+
+* `px` 値を、対応する `rem` 値に置き換えたコードを返す。  
+  ※ `$g-rem-fallback` が `true` の場合は、フォールバックとして `px` 値も返す。
+
+```scss:@mixin
+@mixin rem($properties, $values...) {
+  ...
+}
+```
+
+```scss:scss（使用例）
+.class-name {
+  @include rem(font-size, 14px);
+}
+```
+
+```scss:css（コンパイル結果）
+.class-name {
+  font-size: 14px;
+  font-size: 1.4rem; // $g-rem-base: 10px; の場合
+}
+```
+
+以下の様にも使用可能。
+
+```scss:scss（使用例）
+.class-name {
+  // 一番シンプルな使い方
+  @include rem(font-size, 24px);
+  
+  // ショートハンド
+  @include rem(padding, 10px 0);
+  @include rem(border-bottom, 1px solid #d0d0d0);
+  
+  // 複数値
+  @include rem(text-shadow, 1px 1px #eeeeee, -1px -1px #f0f0f0);
+  
+  // Map型
+  @include rem((
+    margin: 20px 10px,
+    text-indent: 10px
+  ));
+}
+```
+
+```scss:css（コンパイル結果）
+.class-name {
+  // 一番シンプルな使い方
+  font-size: 24px;
+  font-size: 2.4rem;
+  
+  // ショートハンド
+  padding: 10px 0;
+  padding: 1rem 0;
+  border-bottom: 1px solid #d0d0d0;
+  border-bottom: 0.1rem solid #d0d0d0;
+  
+  // 複数値
+  text-shadow: 1px 1px #eeeeee, -1px -1px #f0f0f0;
+  text-shadow: 0.1rem 0.1rem #eeeeee, -0.1rem -0.1rem #f0f0f0;
+  
+  // Map型
+  margin: 20px 10px;
+  margin: 2rem 1rem;
+  text-indent: 10px;
+  text-indent: 1rem;
+}
+```
+
+*/
+// ==================================================
+/// @require {variable} $g-rem-base
+
+@mixin rem($properties, $values...) {
+  @if type-of($properties) == "map" {
+    @each $property in map-keys($properties) {
+      @include rem($property, map-get($properties, $property));
+    }
+  }
+  @else {
+    @each $property in $properties {
+      @if $g-rem-fallback {
+        #{$property}: _rem-convert(px, $values...);
+      }
+      #{$property}: _rem-convert(rem, $values...);
+    }
+  }
+}
+
+@function _rem-convert($to, $values...) {
+  $result: ();
+  $separator: list-separator($values);
+
+  @each $value in $values {
+    @if (type-of($value) == "number") and (unit($value) == "rem") and ($to == "px") {
+      $result: append($result, $value / 1rem * $g-rem-base, $separator);
+    }
+    @else if (type-of($value) == "number") and (unit($value) == "px") and ($to == "rem") {
+      $result: append($result, $value / ($g-rem-base / 1rem), $separator);
+    }
+    @else if (type-of($value) == "list") {
+      $result: append($result, _rem-convert($to, $value...), $separator);
+    }
+    @else {
+      $result: append($result, $value, $separator);
+    }
+  }
+
+  @return if(length($result) == 1, nth($result, 1), $result);
+}

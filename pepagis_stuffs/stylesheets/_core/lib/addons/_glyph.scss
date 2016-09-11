@@ -1,0 +1,54 @@
+/*doc
+---
+title    : glyph()
+parent   : _05_addons
+name     : glyph
+category : index
+---
+
+```scss:@mixin
+@mixin glyph($webfont-id, $glyph-name) {
+  ...
+}
+```
+
+```scss:scss（使用例）
+.class-name:before {
+  @include glyph(home);
+}
+```
+
+```css:css（コンパイル結果）
+.class-name:before {
+  font-family: "Awesome Glyph";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  -webkit-font-smoothing: antialiased;
+  text-transform: none;
+  speak: none;
+  content: "\f600";
+}
+```
+
+*/
+// ==================================================
+
+@mixin glyph($webfont-id, $glyph-name) {
+  @each $id, $data in $g-webfonts {
+    @if $id == $webfont-id {
+      $name       : map-get($data, name);
+      $glyphs     : map-get($data, glyphs);
+      $glyph-code : map-get($glyphs, $glyph-name);
+      
+      font-family: $name;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      -webkit-font-smoothing: antialiased;
+      text-transform: none;
+      speak: none;
+      content: #{'"' + '\\' + $glyph-code + '"'};
+    }
+  }
+}

@@ -1,0 +1,73 @@
+/*doc
+---
+title    : placeholder()
+parent   : _04_css3
+name     : placeholder
+category : index
+---
+
+| IE    | Chrome | Firefox | Safari | Opera  | iOS   | Android | Can I use                                                                    |
+| :---: | :----: | :-----: | :----: | :----: | :---: | :-----: | :--------------------------------------------------------------------------- |
+| `10`  | `OK`   | `4`     | `5`    | `15`   | `4.3` | `2.1`   | [::placeholder CSS pseudo-element](http://caniuse.com/#feat=css-placeholder) |
+
+| 引数 | 初期値 | 値   | 備考 |
+| :--- | :---   | :--- | :--- |
+| なし | -      | -    | -    |
+
+```scss:@mixin
+@mixin placeholder {
+  ...
+}
+```
+
+```scss:scss（使用例）
+.class-name {
+  @include placeholder {
+    color: #d0d0d0;
+  }
+}
+```
+
+```css:css（コンパイル結果）
+.class-name::-webkit-input-placeholder {
+  color: #d0d0d0;
+}
+.class-name::-moz-placeholder {
+  color: #d0d0d0;
+}
+.class-name:-moz-placeholder {
+  color: #d0d0d0;
+}
+.class-name:-ms-input-placeholder {
+  color: #d0d0d0;
+}
+```
+
+*/
+// ==================================================
+/// @require {variable} $g-prefix-for-webkit
+/// @require {variable} $g-prefix-for-mozilla
+/// @require {variable} $g-prefix-for-microsoft
+/// @require {variable} $g-prefix-for-opera
+/// @require {variable} $g-prefix-for-spec
+
+@mixin placeholder {
+  $prefixes: ();
+  
+  @if $g-prefix-for-webkit {
+    $prefixes: append($prefixes, ":-webkit-input");
+  }
+  @if $g-prefix-for-mozilla {
+    $prefixes: append($prefixes, ":-moz");
+    $prefixes: append($prefixes, "-moz");
+  }
+  @if $g-prefix-for-microsoft {
+    $prefixes: append($prefixes, "-ms-input");
+  }
+  
+  @each $prefix in $prefixes {
+    &:#{$prefix}-placeholder {
+      @content;
+    }
+  }
+}

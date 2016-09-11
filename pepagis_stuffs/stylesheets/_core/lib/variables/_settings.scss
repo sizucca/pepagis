@@ -1,0 +1,36 @@
+/*doc
+---
+title    : グローバル変数一覧
+parent   : _07_administrator
+name     : _07_xx_variables
+category : index
+---
+
+| 変数名                    | 初期値    | 値          | 定義ファイル     | 説明                                                            |
+| :------------------------ | :-------- | :---------- | :--------------- | :-------------------------------------------------------------- |
+| `$g-webfonts`             | （省略）  | `<Map>`     | `_webfonts.scss` | Web フォントの設定                                              |
+| `$g-prefix-for-webkit`    | `true`    | `<Boolean>` | `_settings.scss` | webkit ベンダープレフィックスの有無                             |
+| `$g-prefix-for-mozilla`   | `true`    | `<Boolean>` | `_settings.scss` | mozilla ベンダープレフィックスの有無                            |
+| `$g-prefix-for-microsoft` | `true`    | `<Boolean>` | `_settings.scss` | microsoft ベンダープレフィックスの有無                          |
+| `$g-prefix-for-opera`     | `true`    | `<Boolean>` | `_settings.scss` | opera ベンダープレフィックスの有無                              |
+| `$g-prefix-for-spec`      | `true`    | `<Boolean>` | `_settings.scss` | ベンダープレフィックスなしの有無                                |
+| `$g-rem-default`          | `16px`    | `<Number>`  | `_settings.scss` | ブラウザのデフォルトフォントサイズ（通常、変更する必要はない）  |
+| `$g-rem-base`             | `10px`    | `<Number>`  | `_settings.scss` | `1rem` に対応したフォントサイズ（`px` 値を想定）                |
+| `$g-rem-fallback`         | `true`    | `<Boolean>` | `_settings.scss` | `rem` のフォールバック（`px`）の有無                            |
+
+*/
+// ==================================================
+
+// prefixer setting
+// ==================================================
+$g-prefix-for-webkit    : true !default;
+$g-prefix-for-mozilla   : true !default;
+$g-prefix-for-microsoft : true !default;
+$g-prefix-for-opera     : true !default;
+$g-prefix-for-spec      : true !default;
+
+// rem setting
+// ==================================================
+$g-rem-default  : 16px !default;
+$g-rem-base     : 10px !default;
+$g-rem-fallback : true !default;

@@ -1,0 +1,6 @@
+# OS system file
+.DS_Store
+Thumbs.db
+/\.
+node_modules/
+assets/stylesheets/css/framework/

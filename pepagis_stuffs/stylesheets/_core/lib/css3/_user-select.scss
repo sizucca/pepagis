@@ -1,0 +1,43 @@
+/*doc
+---
+title    : user-select()
+parent   : _04_css3
+name     : user-select
+category : index
+---
+
+| IE    | Chrome | Firefox | Safari | Opera  | iOS   | Android | Can I use                                                          |
+| :---: | :----: | :-----: | :----: | :----: | :---: | :-----: | :----------------------------------------------------------------- |
+| `10`  | `OK`   | `2`     | `3.1`  | `15`   | `3.2` | `2.1`   | [CSS user-select: none](http://caniuse.com/#feat=user-select-none) |
+
+| @mixin 名                  | @mixin 引数値              | 備考 |
+| :------------------------- | :------------------------- | :--- |
+| `CSS プロパティ名` と 同じ | `CSS プロパティ値` と 同じ | -    |
+
+```scss:@mixin
+@mixin user-select($value: none) {
+  ...
+}
+```
+
+```scss:scss（使用例）
+.class-name {
+  @include user-select;
+}
+```
+
+```css:css（コンパイル結果）
+.class-name {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+```
+
+*/
+// ==================================================
+
+@mixin user-select($value: none) {
+  @include _prefixer(user-select, $value, webkit moz ms spec);
+}

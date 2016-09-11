@@ -1,0 +1,56 @@
+/*doc
+---
+title    : ceil-decimal()
+parent   : _03_functions
+name     : ceil-decimal
+category : index
+---
+
+| 引数      | 初期値 | 値          | 備考                       |
+| :-------- | :----- | :---------- | :------------------------- |
+| `$number` | なし   | `<Number>`  | 切り上げの対象となる実数値 |
+| `$digits` | `0`    | `<Integer>` | 数値を切り上げた結果の桁数 |
+
+* Sass の組み込み関数 `ceil()` の拡張関数。
+* 切り上げた結果の桁数を指定できる。
+
+```scss:@function
+@function ceil-decimal($number, $digits: 0) {
+  ...
+}
+```
+
+```scss:scss（使用例）
+// 第 1 引数には以下の様に値が直接入るのではなく、何かしらの計算結果が入る想定
+.class-name {
+  margin: ceil-decimal(1.234em, 2);
+}
+```
+
+```css:css（コンパイル結果）
+.class-name {
+  margin: 1.24em;
+}
+```
+
+*/
+// ==================================================
+
+@function ceil-decimal($number, $digits: 0) {
+  // 不正値のチェック
+  @if type-of($number) != number {
+    @warn "ceil-decimal() の引数値 '#{$number}' が不正です。";
+    @return false;
+  }
+  @if (type-of($digits) != number) or (not unitless($digits)) or ($digits < 0) {
+    @warn "ceil-decimal() の引数値 '#{$digits}' が不正です。";
+    @return false;
+  }
+  
+  // OKなら計算して返す
+  $n: 1;
+  @for $i from 1 through $digits {
+    $n: $n * 10;
+  }
+  @return ceil($number * $n) / $n;
+}

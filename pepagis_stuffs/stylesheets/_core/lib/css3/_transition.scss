@@ -1,0 +1,125 @@
+/*doc
+---
+title    : transition()
+parent   : _04_css3
+name     : transition
+category : index
+---
+
+| IE    | Chrome | Firefox | Safari | Opera  | iOS   | Android | Can I use                                                    |
+| :---: | :----: | :-----: | :----: | :----: | :---: | :-----: | :----------------------------------------------------------- |
+| `10`  | `OK`   | `4`     | `3.1`  | `12.1` | `3.2` | `2.1`   | [CSS3 Transitions](http://caniuse.com/#feat=css-transitions) |
+
+| @mixin 名                  | @mixin 引数値              | 備考 |
+| :------------------------- | :------------------------- | :--- |
+| `CSS プロパティ名` と 同じ | `CSS プロパティ値` と 同じ | -    |
+
+```scss:@mixin
+@mixin transition($properties...) {
+  ...
+}
+@mixin transition-property($properties...) {
+  ...
+}
+@mixin transition-duration($times...) {
+  ...
+}
+@mixin transition-timing-function($motions...) {
+  ...
+}
+@mixin transition-delay($times...) {
+  ...
+}
+```
+
+```scss:scss（使用例）
+.class-name {
+  @include transition(all 2.0s ease);
+}
+```
+
+```css:css（コンパイル結果）
+.class-name {
+  -webkit-transition: all 2s ease;
+  -moz-transition: all 2s ease;
+  transition: all 2s ease;
+}
+```
+
+*/
+// ==================================================
+
+// Shorthand mixin. Supports multiple parentheses-deliminated values for each variable.
+// Example: @include transition (all 2s ease-in-out);
+//          @include transition (opacity 1s ease-in 2s, width 2s ease-out);
+//          @include transition-property (transform, opacity);
+
+@mixin transition($properties...) {
+  // Fix for vendor-prefix transform property
+  $needs-prefixes: false;
+  $webkit: ();
+  $moz: ();
+  $spec: ();
+
+  // Create lists for vendor-prefixed transform
+  @each $list in $properties {
+    @if nth($list, 1) == "transform" {
+      $needs-prefixes: true;
+      $list1: -webkit-transform;
+      $list2: -moz-transform;
+      $list3: ();
+
+      @each $var in $list {
+        $list3: join($list3, $var);
+
+        @if $var != "transform" {
+          $list1: join($list1, $var);
+          $list2: join($list2, $var);
+        }
+      }
+
+      $webkit: append($webkit, $list1);
+      $moz:    append($moz,    $list2);
+      $spec:   append($spec,   $list3);
+    }
+    @else {
+      $webkit: append($webkit, $list, comma);
+      $moz:    append($moz,    $list, comma);
+      $spec:   append($spec,   $list, comma);
+    }
+  }
+
+  @if $needs-prefixes {
+    -webkit-transition: $webkit;
+       -moz-transition: $moz;
+            transition: $spec;
+  }
+  @else {
+    @if length($properties) >= 1 {
+      @include _prefixer(transition, $properties, webkit moz spec);
+    }
+    @else {
+      $properties: all 0.15s ease-out 0s;
+      @include _prefixer(transition, $properties, webkit moz spec);
+    }
+  }
+}
+
+@mixin transition-property($properties...) {
+  -webkit-transition-property: transition-property-names($properties, "webkit");
+     -moz-transition-property: transition-property-names($properties, "moz");
+          transition-property: transition-property-names($properties, false);
+}
+
+@mixin transition-duration($times...) {
+  @include _prefixer(transition-duration, $times, webkit moz spec);
+}
+
+@mixin transition-timing-function($motions...) {
+  // ease | linear | ease-in | ease-out | ease-in-out | cubic-bezier()
+  @include _prefixer(transition-timing-function, $motions, webkit moz spec);
+}
+
+@mixin transition-delay($times...) {
+  @include _prefixer(transition-delay, $times, webkit moz spec);
+}

@@ -1,0 +1,43 @@
+/*doc
+---
+title    : appearance()
+parent   : _04_css3
+name     : appearance
+category : index
+---
+
+| IE    | Chrome | Firefox | Safari | Opera  | iOS   | Android | Can I use                                                 |
+| :---: | :----: | :-----: | :----: | :----: | :---: | :-----: | :-------------------------------------------------------- |
+| `12`  | `OK`   | `2`     | `3.1`  | `15`   | `3.2` | `2.1`   | [CSS Appearance](http://caniuse.com/#feat=css-appearance) |
+
+| @mixin 名                  | @mixin 引数値              | 備考 |
+| :------------------------- | :------------------------- | :--- |
+| `CSS プロパティ名` と 同じ | `CSS プロパティ値` と 同じ | -    |
+
+```scss:@mixin
+@mixin appearance($value: none) {
+  ...
+}
+```
+
+```scss:scss（使用例）
+.class-name {
+  @include appearance(none);
+}
+```
+
+```css:css（コンパイル結果）
+.class-name {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+}
+```
+
+*/
+// ==================================================
+
+@mixin appearance($value) {
+  @include _prefixer(appearance, $value, webkit moz ms spec);
+}

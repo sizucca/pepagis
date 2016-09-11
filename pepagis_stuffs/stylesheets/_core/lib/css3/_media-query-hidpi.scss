@@ -1,0 +1,87 @@
+/*doc
+---
+title    : media-query-hidpi()
+parent   : _04_css3
+name     : media-query-hidpi
+category : index
+---
+
+| IE    | Chrome | Firefox | Safari | Opera  | iOS   | Android | Can I use                                                                          |
+| :---: | :----: | :-----: | :----: | :----: | :---: | :-----: | :--------------------------------------------------------------------------------- |
+| `9`   | `OK`   | `3.5`   | `4`    | `10.1` | `4.1` | `2.3`   | [Media Queries: resolution feature](http://caniuse.com/#feat=css-media-resolution) |
+
+| 引数     | 初期値 | 値               | 備考                               |
+| :------- | :----- | :--------------- | :--------------------------------- |
+| `$ratio` | `1.3`  | `resolution` 値  | フィルタリングする画素密度の最低値 |
+
+* 高解像度のディスプレイ（HiDPI）をフィルタリングするメディアクエリを返す。
+* 各種デバイスの画素密度（`resolution`）の参考元：<http://bjango.com/articles/min-device-pixel-ratio/>
+
+```scss:@mixin
+@mixin media-query-hidpi($ratio: 1.3) {
+  ...
+}
+```
+
+```scss:scss（使用例）
+.class-name {
+  font-weight: bold;
+  @include media-query-hidpi {
+    font-weight: normal;
+  }
+}
+```
+
+```css:css（コンパイル結果）
+.class-name {
+  font-weight: bold;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.3),
+ only screen and (min--moz-device-pixel-ratio: 1.3),
+ only screen and (-o-min-device-pixel-ratio: 1.3 / 1),
+ only screen and (min-device-pixel-ratio: 1.3),
+ only screen and (min-resolution: 125dpi),
+ only screen and (min-resolution: 1.3dppx) {
+  .class-name {
+    font-weight: normal;
+  }
+}
+```
+
+*/
+// ==================================================
+/// @require {variable} $g-prefix-for-webkit
+/// @require {variable} $g-prefix-for-mozilla
+/// @require {variable} $g-prefix-for-microsoft
+/// @require {variable} $g-prefix-for-opera
+/// @require {variable} $g-prefix-for-spec
+
+// media-query-resolution と名前迷ったけど、hidpi に絞った機能に...
+@mixin media-query-hidpi($ratio: 1.3) {
+  // @if (type-of($ratio) == number) and unitless($ratio) and ($ratio > 0) {
+  // あまりチェックしすぎるとコンパイルエラーにならないので、とりあえず最低限
+  // (dpi と dppx の掛け算が無くなる場合は、もう少しチェックが必要になる)
+  @if $ratio > 0 {
+    $queries: ();
+    
+    @if $g-prefix-for-webkit {
+      $queries: append($queries, "only screen and (-webkit-min-device-pixel-ratio: #{$ratio})", comma);
+    }
+    @if $g-prefix-for-mozilla {
+      $queries: append($queries, "only screen and (min--moz-device-pixel-ratio: #{$ratio})", comma);
+    }
+    @if $g-prefix-for-opera {
+      $queries: append($queries, "only screen and (-o-min-device-pixel-ratio: #{$ratio}/1)", comma);
+    }
+    @if $g-prefix-for-spec {
+      $queries: append($queries, "only screen and (min-device-pixel-ratio: #{$ratio})", comma);
+    }
+    // 下の2行 $g-prefix-for-spec の中かどうか迷ったけど、要出力のコードなので、とりあえず･･･
+    $queries: append($queries, "only screen and (min-resolution: #{round($ratio * 96dpi)})", comma);
+    $queries: append($queries, "only screen and (min-resolution: #{$ratio * 1dppx})", comma);
+
+    @media #{$queries} {
+      @content;
+    }
+  }
+}

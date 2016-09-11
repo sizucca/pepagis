@@ -1,0 +1,33 @@
+/*doc
+---
+title    : _convert-units()
+parent   : _08_helpers
+name     : _convert-units
+category : index
+---
+
+* Helper function for `helpers/_str-to-num`.
+
+*/
+// ==================================================
+//************************************************************************//
+// Helper function for str-to-num fn.
+// Source: http://sassmeister.com/gist/9647408
+//************************************************************************//
+@function _convert-units($number, $unit) {
+  $strings: "px", "cm", "mm", "%", "ch", "pica", "in", "em", "rem", "pt", "pc", "ex", "vw", "vh", "vmin", "vmax", "deg", "rad", "grad", "turn";
+  $units:   1px, 1cm, 1mm, 1%, 1ch, 1pica, 1in, 1em, 1rem, 1pt, 1pc, 1ex, 1vw, 1vh, 1vmin, 1vmax, 1deg, 1rad, 1grad, 1turn;
+  $index: index($strings, $unit);
+
+  @if not $index {
+    @warn "_convert-units() の引数値 '#{$unit}' に単位がありません。";
+    @return false;
+  }
+
+  @if type-of($number) != "number" {
+    @warn "_convert-units() の引数値 '#{$number}' が Number 型ではありません。";
+    @return false;
+  }
+
+  @return $number * nth($units, $index);
+}

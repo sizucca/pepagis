@@ -1,0 +1,49 @@
+/*doc
+---
+title    : root-font-size()
+parent   : _03_functions
+name     : root-font-size
+category : index
+---
+
+| 引数    | 初期値        | 値            | 備考                                           |
+| :------ | :------------ | :------------ | :--------------------------------------------- |
+| `$size` | `$g-rem-base` | `<Integer>px` | 理由がない場合は指定なし（初期値のまま）にする |
+
+* ブラウザデフォルトのフォントサイズ（一般的には16px）に対する引数値のパーセンテージを返す。
+* 引数値は、特に理由がない場合は指定なし（初期値のまま）にする。
+* **root 要素（html 要素）のフォントサイズにのみ**使用可能。  
+
+```scss:@function
+@function root-font-size($size: $g-rem-base) {
+  ...
+}
+```
+
+```scss:scss（使用例）
+html {
+  font-size: root-font-size();
+}
+```
+
+```scss:css（コンパイル結果）
+html {
+  font-size: 62.5%; // $g-rem-base: 10px; の場合
+}
+```
+
+*/
+// ==================================================
+/// @require {variable} $g-rem-default
+/// @require {variable} $g-rem-base
+
+@function root-font-size($size: $g-rem-base) {
+  // 今の所（ブラウザデフォルトが 16px なので）引数値も px 値しか想定していない
+  @if unit($size) == "px" {
+    @return percentage($size / $g-rem-default);
+  }
+  @else {
+    @warn "root-font-size() の引数値 '#{$size}' が不正です。";
+    @return false;
+  }
+}
