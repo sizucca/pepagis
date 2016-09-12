@@ -3,6 +3,6 @@
 Thumbs.db
 /\.
 !.gitkeep
+.tmp_dst/
+.tmp_src/
 node_modules/
-.dst/
-src/.tmp/

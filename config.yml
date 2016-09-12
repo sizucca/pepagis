@@ -1,7 +1,7 @@
 # The directory containing the source files to parse recursively
 source:
   - ./src/docs
-  - ./src/.tmp/docs
+  - ./.tmp_src/docs
 
 source_type:
   - .scss
@@ -9,13 +9,13 @@ source_type:
   - .css
 
 # The directory that aigis will build to
-dest: ./.dst
+dest: ./.tmp_dst
 
 # The assets needed to build the docs
 # You may put doc related assets here too: images, css, etc.
 dependencies:
   - ./src/assets
-  - ./src/.tmp/assets
+  - ./.tmp_src/assets
 
 # The directory containing the tempalte files to generate pages
 # It must contain 'layout.xxx' and 'index.xxx' (.ejs or .jade or .hbs)

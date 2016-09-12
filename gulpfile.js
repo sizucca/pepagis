@@ -8,11 +8,11 @@ var browserSync = require('browser-sync');
 var runSequence = require('run-sequence');
 
 // setting path
-var publicDir  = './gh-pages/';
-var dstDir     = './.dst/';
-var srcDir     = './src/';
-var tmpDir     = './src/.tmp/';
 var configPath = './config.yml';
+var srcDir     = './src/';
+var tmpSrcDir  = './.tmp_src/';
+var dstDir     = './gh-pages/';
+var tmpDstDir  = './.tmp_dst/';
 
 // watch list
 var watchList = [
@@ -24,12 +24,12 @@ var watchList = [
 
 // pepagis css path
 var pepagisCssSrc  = srcDir + 'scss/**/*.scss';
-var pepagisCssDest = tmpDir + 'assets/stylesheets/';
+var pepagisCssDest = tmpSrcDir + 'assets/stylesheets/';
 
 // framework css path
 var frameworkCssSrc  = '../pepabo.css-framework/project_sizucca/stylesheets/scss/**/*.scss';
-var frameworkCssDocs = tmpDir + 'docs/framework/';
-var frameworkCssDest = tmpDir + 'assets/stylesheets/framework/';
+var frameworkCssDocs = tmpSrcDir + 'docs/framework/';
+var frameworkCssDest = tmpSrcDir + 'assets/stylesheets/framework/';
 
 // ------------------------------------------------------------
 // task
@@ -45,8 +45,9 @@ gulp.task('build', function(){
     'framework-docs-comp',
     'framework-css-comp',
     'aigis',
-    'public-copy',
-    'sync'
+    'dst-copy',
+    'sync',
+    'sync-reload'
   );
 });
 
@@ -54,7 +55,7 @@ gulp.task('rebuild-pepagis-css', function(){
   runSequence(
     'pepagis-css-comp',
     'aigis',
-    'public-copy',
+    'dst-copy',
     'sync-reload'
   );
 });
@@ -64,7 +65,7 @@ gulp.task('rebuild-framework-css', function(){
     'framework-docs-comp',
     'framework-css-comp',
     'aigis',
-    'public-copy',
+    'dst-copy',
     'sync-reload'
   );
 });
@@ -72,7 +73,7 @@ gulp.task('rebuild-framework-css', function(){
 gulp.task('rebuild', function(){
   runSequence(
     'aigis',
-    'public-copy',
+    'dst-copy',
     'sync-reload'
   );
 });
@@ -82,16 +83,16 @@ gulp.task('aigis', function(){
   .pipe(aigis());
 });
 
-gulp.task('public-copy', ['public-clean'], function(){
-  return gulp.src(dstDir + '**/*', {base: dstDir})
-  .pipe(gulp.dest(publicDir));
+gulp.task('dst-copy', ['dst-clean'], function(){
+  return gulp.src(tmpDstDir + '**/*', {base: tmpDstDir})
+  .pipe(gulp.dest(dstDir));
 });
-gulp.task('public-clean', del.bind(null, publicDir + '**/*'));
+gulp.task('dst-clean', del.bind(null, dstDir + '**/*'));
 
 gulp.task('sync', function(){
   return browserSync({
     server: {
-      baseDir: publicDir,
+      baseDir: dstDir,
       index  : 'index.html'
     }
   });
