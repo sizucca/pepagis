@@ -21,7 +21,7 @@ git clone git@github.com:sizucca/pepabo.css-framework.git
 cd pepagis
 npm install --save-dev gulp del gulp-sass gulp-plumber gulp-aigis browser-sync run-sequence
 
-# ↑は以下をまとめて install しているだけ
+# ↑ は以下をまとめて install しているだけ
 # npm install --save-dev gulp
 # npm install --save-dev del
 # npm install --save-dev gulp-sass
@@ -31,21 +31,19 @@ npm install --save-dev gulp del gulp-sass gulp-plumber gulp-aigis browser-sync r
 # npm install --save-dev run-sequence
 ```
 
-`gh-pages` ブランチを `pepagis/public_html` にチェックアウト。
+`gh-pages` ブランチを `pepagis/public_html` にチェックアウト。  
 （こうする事で、自動コンパイルされたファイルをそのまま `gh-pages` に コミットできるようになる）
 
-【注意】`git worktree` を使うには`git 2.7.0` 以降が必要。
-
 ```sh
+#【注意】`git worktree` を使うには`git 2.7.0` 以降が必要。
 # cd pepagis
 git worktree add public_html gh-pages
 ```
 
 以下のディレクトリに移動すると、ブランチが `master` から `gh-pages` に変わっていれば成功。
 
-【注意】`public_html` ディレクトリにある `.git` は絶対に消さない事！（`public_html` ごと消すとかダメ、絶対）
-
 ```sh
+#【注意】`public_html` ディレクトリにある `.git` は絶対に消さない事！（`public_html` ごと消すとかダメ、絶対）
 cd public_html
 ```
 
