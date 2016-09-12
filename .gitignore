@@ -2,6 +2,7 @@
 .DS_Store
 Thumbs.db
 /\.
+!.gitkeep
 node_modules/
 pepagis_stuffs/dst/
 pepagis_stuffs/src/tmp/
