@@ -1,18 +1,37 @@
 # The directory containing the source files to parse recursively
 source:
   - ./src/docs
-  - ./src/tmp/docs
+  - ./src/.tmp/docs
+
+source_type:
+  - .scss
+  - .md
+  - .css
 
 # The directory that aigis will build to
-dest: ./dst
+dest: ./.dst
 
 # The assets needed to build the docs
 # You may put doc related assets here too: images, css, etc.
 dependencies:
   - ./src/assets
-  - ./src/tmp/assets
+  - ./src/.tmp/assets
 
 # The directory containing the tempalte files to generate pages
 # It must contain 'layout.xxx' and 'index.xxx' (.ejs or .jade or .hbs)
 template_dir: ./src/template_jade
 template_engine: jade
+
+# optional
+# https://pxgrid.github.io/aigis/docs/en/category/Documentation/Configs/
+color_palette: false
+
+preview_class: 'pepagis-preview'
+
+output_collection:
+  - category
+  - overview
+
+transform:
+  - html
+  - jade
