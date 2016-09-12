@@ -35,7 +35,7 @@ npm install --save-dev gulp del gulp-sass gulp-plumber gulp-aigis browser-sync r
 （こうする事で、自動コンパイルされたファイルをそのまま `gh-pages` に コミットできるようになる）
 
 ```sh
-#【注意】`git worktree` を使うには`git 2.7.0` 以降が必要。
+# 【注意】`git worktree` を使うには`git 2.7.0` 以降が必要。
 # cd pepagis
 git worktree add public_html gh-pages
 ```
@@ -43,7 +43,8 @@ git worktree add public_html gh-pages
 以下のディレクトリに移動すると、ブランチが `master` から `gh-pages` に変わっていれば成功。
 
 ```sh
-#【注意】`public_html` ディレクトリにある `.git` は絶対に消さない事！（`public_html` ごと消すとかダメ、絶対）
+# 【注意】`public_html` ディレクトリにある `.git` は絶対に消さない事！（`public_html` ごと消すとかダメ、絶対）
+# cd pepagis
 cd public_html
 ```
 
