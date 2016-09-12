@@ -1,11 +1,20 @@
 doctype html
-html
+html(lang='ja')
   head
     meta(charset='utf-8')
-    meta(name='viewport', content='width=device-width')
+    title Styleguide
+    meta(http-equiv='x-ua-compatible', content='ie=edge')
+    meta(name='viewport', content='width=device-width,initial-scale=1')
+    meta(name='format-detection', content='telephone=no')
+
     link(href=root + 'assets/stylesheets/pepagis.css', rel='stylesheet')
     link(href=root + 'assets/stylesheets/highlight/okadia.css', rel='stylesheet')
     link(href=root + 'assets/stylesheets/framework/application.css', rel='stylesheet')
+
+    //- link(href='//fonts.googleapis.com/css?family=Lato:400,300,700,900', rel='stylesheet', type='text/css')
+    link(rel='shortcut icon', href=root + 'assets/favicon.ico', type='image/vnd.microsoft.icon')
+    link(rel='icon', href=root + 'assets/favicon.ico', type='image/vnd.microsoft.icon')
+
   body
     .aigis-container
       include ./sidemenu
