@@ -7,8 +7,7 @@ https://github.com/pxgrid/aigis/
 
 https://sizucca.github.io/pepagis/
 
-
-## Install
+## Install 手順
 
 ```sh
 git clone git@github.com:sizucca/pepagis.git
@@ -54,6 +53,14 @@ cd public_html
 # cd pepagis
 gulp
 ```
+
+## 設定方法
+
+＜あとで書く！＞
+
+## 使い方
+
+＜あとで書く！＞
 
 gulp で監視しながら  
 https://github.com/sizucca/pepabo.css-framework/tree/master/project_sho/stylesheets/scss/_application/objects/components  
