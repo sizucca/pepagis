@@ -15,26 +15,18 @@ git clone git@github.com:sizucca/pepagis.git
 git clone git@github.com:sizucca/pepabo.css-framework.git
 ```
 
-build
-
-```sh
-cd pepagis
-npm install --save-dev node-aigis
-./node_modules/.bin/aigis run -c ./pepagis_stuffs/config.yml
-```
-
-gulp で開発しやすくする
+必要な npm をインストール
 
 ```sh
 # cd pepagis
-npm install --save-dev gulp gulp-aigis browser-sync gulp-sass gulp-cssmin gulp-plumber node-sass
+npm install --save-dev gulp del gulp-sass gulp-plumber gulp-aigis browser-sync run-sequence
 # npm install --save-dev gulp
+# npm install --save-dev del
+# npm install --save-dev gulp-sass
+# npm install --save-dev gulp-plumber
 # npm install --save-dev gulp-aigis
 # npm install --save-dev browser-sync
-# npm install --save-dev gulp-sass
-# npm install --save-dev gulp-cssmin
-# npm install --save-dev gulp-plumber
-# npm install --save-dev node-sass
+# npm install --save-dev run-sequence
 ```
 
 gulp で監視しながら作業
