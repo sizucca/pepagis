@@ -1,0 +1,22 @@
+// ==================================================
+// pepagis-header
+// ==================================================
+.pepagis-header {
+  position: relative;
+  color: #bdc3c7;
+  text-align: center;
+  border-bottom: 1px solid rgba(#bdc3c7, 0.5);
+  background-color: #fff;
+  a {
+    display: block;
+    position: relative;
+    z-index: 1;
+    padding: 1em 10px;
+    color: inherit;
+    font-weight: 500;
+    font-size: 1.29em;
+    text-shadow: 0 1px 1px #ffffff;
+    letter-spacing: 1px;
+    line-height: 1;
+  }
+}

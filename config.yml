@@ -1,8 +1,13 @@
+# Aigis will run from same directory where this config file resides
+# All paths should be relative to there
+name: Styleguide
+
 # The directory containing the source files to parse recursively
 source:
   - ./src/docs
   - ./.tmp_src/docs
 
+# The types that aigis will scan to document comment
 source_type:
   - .scss
   - .md
@@ -22,16 +27,19 @@ dependencies:
 template_dir: ./src/template_jade
 template_engine: jade
 
-# optional
-# https://pxgrid.github.io/aigis/docs/en/category/Documentation/Configs/
+# When you don't want color palette page (color.html) you may set false
 color_palette: false
 
 preview_class: 'pepagis-preview'
 
 output_collection:
-  - category
-  - overview
+  - docs
+  - library
+  - framework
 
 transform:
   - html
   - jade
+
+highlight: true
+highlight_theme: monokai

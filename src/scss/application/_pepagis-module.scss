@@ -1,0 +1,291 @@
+// ==================================================
+// pepagis-module
+// ==================================================
+.pepagis-module {
+  padding: 0 40px;
+}
+.pepagis-module__header {
+  position: relative;
+}
+.pepagis-module__heading1 {
+  margin: 20px -40px 16px;
+  padding: 0 40px 12px;
+  border-bottom: 1px solid #d7dbdd;
+  font-weight: 700;
+  font-family: $g-font-family-en;
+  font-size: 30px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
+  line-height: 1.3;
+}
+.pepagis-module__heading2 {
+  padding: 40px 0 12px;
+  border-bottom: 1px solid #d7dbdd;
+  font-weight: 700;
+  font-family: $g-font-family-en;
+  font-size: 26px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
+  line-height: 1.3;
+}
+.pepagis-module__filepath {
+  position: absolute;
+  right: 0;
+  bottom:6px;
+  font-size: 12px;
+  color: #ADADAD;
+  font-family: $g-font-family-en;
+}
+.pepagis-module__body {
+  
+  // p
+  > p {
+    margin-bottom: 16px;
+  }
+    // list
+  > ul,
+  > ol,
+  .section-nav {
+    margin-bottom: 16px;
+    padding-left: 2em;
+  }
+  > ul,
+  .section-nav {
+    list-style-type: disc;
+  }
+  > ol {
+    list-style-type: decimal;
+  }
+  > ul li,
+  > ol li,
+  .section-nav li {
+    margin-bottom: 0.3em;
+    list-style-type: inherit;
+  }
+  > ul ul,
+  > ul ol,
+  > ol ul,
+  > ol ol {
+    margin-top: 0.2em;
+    margin-bottom: 0;
+  }
+  > ul ul,
+  > ol ul {
+    list-style-type: circle;
+  }
+  > ul ol,
+  > ol ol {
+    list-style-type: lower-roman;
+  }
+  > ul ul ul,
+  > ul ol ul,
+  > ol ul ul,
+  > ol ol ul {
+    list-style-type: square;
+  }
+  > ul ul ol,
+  > ul ol ol,
+  > ol ul ol,
+  > ol ol ol {
+    list-style-type: lower-alpha;
+  }
+  
+  // code
+  > ul code, 
+  > p code {
+    padding: 0.1em 0.4em;
+    border: 1px solid #d7dbdd;
+    border-radius: 3px;
+    color: #34495e;
+    font-family: Consolas, "Courier New", Courier, monospace, Monaco, Menlo, "ＭＳ ゴシック", "MS UI Gothic", sans-serif;
+    font-size: 0.86em;
+    word-spacing: normal;
+    word-wrap: normal;
+    white-space: pre;
+    background-color: #ffffff;
+  }
+
+  // pre
+  > pre {
+    background-color: #272822;
+    background-color: #F9FAF9;
+    color: #f8f8f2;
+    color: #858585;
+    font-family: Consolas, "Courier New", Courier, monospace, Monaco, Menlo, "ＭＳ ゴシック", "MS UI Gothic", sans-serif;
+    line-height: 1.5;
+    font-size: 14px;
+    position: relative;
+    padding: 0.5em;
+    border-radius: 3px;
+    margin: 0 auto 3em;
+    overflow: scroll;
+    border: 1px solid #A0A0A0;
+  }
+  > pre code {
+    font-family: Consolas, "Courier New", Courier, monospace, Monaco, Menlo, "ＭＳ ゴシック", "MS UI Gothic", sans-serif;
+  }
+  
+  // table
+   > table {
+    margin-bottom: 16px;
+    border-spacing: 0;
+    border-collapse: collapse;
+    th,
+    td {
+      padding: 0.3em 12px;
+      border: 1px solid #d7dbdd;
+      background-color: #ffffff;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
+    tr:nth-child(odd) td {
+      background-color: #f9f9f9;
+    }
+  }
+  
+  // dl
+  > dl {
+    margin-bottom: 16px;
+    dt {
+      margin: 0 0 16px;
+      padding: 0;
+      font-weight: bold;
+      font-size: 1em;
+    }
+    dd {
+      margin: 0 0 16px;
+      padding: 0 1em;
+      font-size: 1em;
+    }
+    dt + dd {
+      margin-top: -16px;
+    }
+  }
+}
+
+// 残り〜〜（__body 系。。マルチにしたほうがいいかもな）
+.pepagis-blocks > blockquote,
+.pepagis-blocks > blockquote blockquote,
+.pepagis-examples > blockquote,
+.pepagis-examples > blockquote blockquote {
+  margin: 0 0 16px;
+  padding: 0 15px;
+  outline: 0;
+  border: 0;
+  border-left: 4px solid #d7dbdd;
+  color: #7f8c8d;
+}
+.pepagis-blocks > blockquote .pepagis-element,
+.pepagis-examples > blockquote .pepagis-element {
+  margin-top: 0;
+  color: #7f8c8d;
+}
+.pepagis-blocks > blockquote .pepagis-element *,
+.pepagis-examples > blockquote .pepagis-element * {
+  color: #7f8c8d;
+}
+.pepagis-blocks > blockquote h1.pepagis-element,
+.pepagis-blocks > blockquote h2.pepagis-element,
+.pepagis-examples > blockquote h1.pepagis-element,
+.pepagis-examples > blockquote h2.pepagis-element {
+  padding-top: 0;
+}
+
+/* hr
+============================== */
+.pepagis-blocks > hr,
+.pepagis-examples > hr {
+  margin: 16px 0;
+  padding: 0;
+  border: 0 none;
+  height: 2px;
+  background-color: #d7dbdd;
+}
+.pepagis-element a,
+.section-nav a {
+  color: #4488c7;
+  text-decoration: none;
+}
+.pepagis-element a:hover,
+.section-nav a:hover {
+  text-decoration: underline;
+}
+h1.styleguide,
+h1.pepagis-element {
+  margin-top: -32px;
+  margin-bottom: 16px;
+  padding: 64px 0 0.3em;
+  border-bottom: 3px solid #d7dbdd;
+  font-weight: 700;
+  font-size: 29px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
+  line-height: 1.3;
+}
+h1.styleguide:first-child,
+h1.pepagis-element:first-child {
+  margin-top: 0;
+}
+h2.styleguide,
+h2.pepagis-element {
+  margin-top: -32px;
+  margin-bottom: 16px;
+  padding: 64px 0 0.3em;
+  border-bottom: 1px solid #d7dbdd;
+  font-weight: 700;
+  font-size: 24px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
+  line-height: 1.3;
+}
+h1.styleguide > a,
+h2.styleguide > a {
+  display: inline-block;
+  position: relative;
+  color: inherit;
+  text-decoration: inherit;
+}
+h1.styleguide > a:hover,
+h1.styleguide.is-active > a,
+h2.styleguide > a:hover,
+h2.styleguide.is-active > a {
+  text-indent: -1em;
+}
+h1.styleguide > a:hover:before,
+h1.styleguide.is-active > a:before,
+h2.styleguide > a:hover:before,
+h2.styleguide.is-active > a:before {
+  margin-right: 0.19em;
+  color: #bdc3c7;
+  font-family: "Styleguide Glyph";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 0.82em;
+  font-variant: normal;
+  -webkit-font-smoothing: antialiased;
+  text-transform: none;
+  line-height: 1;
+  content: "\f604";
+  speak: none;
+}
+h3.pepagis-element {
+  margin-bottom: 16px;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 1.3;
+}
+h4.pepagis-element {
+  margin-bottom: 16px;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 1.3;
+}
+h5.pepagis-element {
+  margin-bottom: 16px;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.3;
+}
+h6.pepagis-element {
+  margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 1.3;
+}

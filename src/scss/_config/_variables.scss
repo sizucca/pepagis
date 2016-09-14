@@ -1,0 +1,23 @@
+// ==================================================
+// Variables
+// ==================================================
+
+// font-family
+// ==================================================
+$g-font-family-ja  : "Roboto", "Helvetica Neue", Helvetica, Arial, "メイリオ", "Meiryo", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", sans-serif;
+$g-font-family-en  : "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$g-font-family-num : Arial, sans-serif;
+
+// font-size
+// ==================================================
+$g-font-size : 16px;
+
+// border-radius
+// ==================================================
+$g-border-radius : 4px;
+
+// contents
+// ==================================================
+$g-contents-min-width     : 768px;
+$g-contents-side-width    : 280px;
+$g-contents-side-bg-color : pe-color(accent, light);

@@ -1,0 +1,12 @@
+// ==================================================
+// pepagis-clearfix
+// ==================================================
+.pepagis-clearfix:before,
+.pepagis-clearfix:after {
+  display: block;
+  overflow: hidden;
+  content: "";
+}
+.pepagis-clearfix:after {
+  clear: both;
+}

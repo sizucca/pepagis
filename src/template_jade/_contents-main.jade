@@ -1,0 +1,30 @@
+article.pepagis-contents__main-inner
+  if components.length
+
+    - var title = components[0].config.name;
+
+    each module, idx in components
+      if (idx === 0) || (module.config.name === title)
+        .pepagis-module
+          .pepagis-module__header.pepagis-reset
+            h2.pepagis-module__heading1(id=module.config.name) #{module.config.name}
+            .pepagis-module__filepath!= module.sourcePath
+          .pepagis-module__body
+            != module.html
+
+    ul.pepagis-module-list.pepagis-reset
+      each module, idx in components
+        if idx !== 0
+          li.pepagis-module-list__item
+            a(href='#' + module.config.name) #{module.config.name}
+
+    each module, idx in components
+      if (module.config.name !== title)
+        .pepagis-module
+          .pepagis-module__header.pepagis-reset
+            h3.pepagis-module__heading2(id=module.config.name) #{module.config.name}
+            .pepagis-module__filepath!= module.sourcePath
+          .pepagis-module__body
+            != module.html
+  else
+    include ./_top

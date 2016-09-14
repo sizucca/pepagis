@@ -1,0 +1,20 @@
+header.pepagis-header
+  h1
+    a(href=root)
+      | #{config.name}
+
+nav.pepagis-nav
+  .pepagis-nav__heading
+    | Documentation
+  .pepagis-nav__list
+    != helper.renderCollectionTree('docs')
+
+  .pepagis-nav__heading
+    | CSS Framework
+  .pepagis-nav__list
+    != helper.renderCollectionTree('framework')
+
+  .pepagis-nav__heading
+    | Sass Mixins Library
+  .pepagis-nav__list
+    != helper.renderCollectionTree('library')

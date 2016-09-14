@@ -27,7 +27,7 @@ var pepagisCssSrc  = srcDir + 'scss/**/*.scss';
 var pepagisCssDest = tmpSrcDir + 'assets/stylesheets/';
 
 // framework css path
-var frameworkCssSrc  = '../pepabo.css-framework/project_sho/stylesheets/scss/**/*.scss';
+var frameworkCssSrc  = '../pepabo.css-framework/project-sho/stylesheets/scss/**/*.scss';
 var frameworkCssDocs = tmpSrcDir + 'docs/framework/';
 var frameworkCssDest = tmpSrcDir + 'assets/stylesheets/framework/';
 

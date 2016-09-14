@@ -1,0 +1,29 @@
+// ==================================================
+// pepagis-reset
+// ==================================================
+.pepagis-reset {
+  color: $g-text-color;
+  font-family: $g-font-family-ja;
+  font-size: $g-font-size;
+  text-align: left;
+  line-height: 1.4;
+  * {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+    background: transparent;
+  }
+  a {
+    color: $g-link-color;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover,
+    &:active {
+      color: $g-hover-color;
+      text-decoration: inherit;
+    }
+  }
+}

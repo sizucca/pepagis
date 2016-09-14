@@ -1,24 +1,26 @@
 doctype html
-html(lang='ja')
+html.pepagis-html(lang='ja')
   head
     meta(charset='utf-8')
-    title Styleguide
+    title #{config.name}
     meta(http-equiv='x-ua-compatible', content='ie=edge')
     meta(name='viewport', content='width=device-width,initial-scale=1')
     meta(name='format-detection', content='telephone=no')
 
-    link(href=root + 'assets/stylesheets/pepagis.css', rel='stylesheet')
-    link(href=root + 'assets/stylesheets/highlight/okadia.css', rel='stylesheet')
+    link(href=root + 'assets/stylesheets/application.css', rel='stylesheet')
+    link(href=root + 'assets/stylesheets/highlight/prism.css', rel='stylesheet')
     link(href=root + 'assets/stylesheets/framework/application.css', rel='stylesheet')
 
-    //- link(href='//fonts.googleapis.com/css?family=Lato:400,300,700,900', rel='stylesheet', type='text/css')
+    link(href='//fonts.googleapis.com/css?family=Roboto:400,300,500,700', rel='stylesheet')
     link(rel='shortcut icon', href=root + 'assets/favicon.ico', type='image/vnd.microsoft.icon')
     link(rel='icon', href=root + 'assets/favicon.ico', type='image/vnd.microsoft.icon')
 
-  body
-    .aigis-container
-      include ./sidemenu
-      .aigis-contents
-        .aigis-contents__body
-          include ./components
-          footer.aigis-footer Last update at #{timestamp}
+  body.pepagis-body
+    .pepagis-contents.pepagis-clearfix
+      .pepagis-contents__main
+        include ./_contents-main
+        footer.pepagis-footer.pepagis-reset
+          | Last update at #{timestamp}
+      .pepagis-contents__side.pepagis-reset
+        include ./_contents-side
+      .pepagis-contents__shadow
