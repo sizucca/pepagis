@@ -3,6 +3,7 @@
 // ==================================================
 .pepagis-color {
   margin: 20px 0;
+  white-space: nowrap;
 }
 .pepagis-color__item {
   @include pe-box-sizing(border-box);
@@ -15,6 +16,7 @@
   border-radius: 20px 0 0 20px;
   font-family: $g-font-family-code;
   font-size: 14px;
+  background-color: $g-color-white;
 }
 .pepagis-color__scss {
   border-bottom: 1px solid;
