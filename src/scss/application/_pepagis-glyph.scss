@@ -10,16 +10,11 @@
   margin-bottom: 15px;
   padding-right: 15px;
   display: block;
-  float: left;
-  width: (100% / 3);
-  border-left: 20px solid;
-  border-radius: 20px 0 0 20px;
   font-family: $g-font-family-code;
   font-size: 14px;
-  background-glyph: $g-glyph-white;
+  background-color: $g-color-white;
 }
 .pepagis-glyph__scss {
-  border-bottom: 1px solid;
   padding: 8px 10px;
 }
 .pepagis-glyph__code {
