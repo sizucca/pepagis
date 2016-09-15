@@ -8,4 +8,7 @@
   text-align: center;
   color: $g-color-white;
   background-color: pe-color(accent);
+  & + p {
+    text-align: center;
+  }
 }
