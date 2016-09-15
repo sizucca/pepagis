@@ -1,7 +1,7 @@
 /*
 ---
-name : Getting Started
-docs :
+name: Getting Started
+document:
   - Getting Started
 ---
 
