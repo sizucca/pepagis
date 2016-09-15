@@ -5,12 +5,32 @@ article.pepagis-contents__main-inner
 
     each module, idx in components
       if (idx === 0) || (module.config.name === title)
+
         .pepagis-module
           .pepagis-module__header.pepagis-reset
             h2.pepagis-module__heading1(id=module.config.name) #{module.config.name}
             .pepagis-module__filepath!= module.sourcePath
-          .pepagis-module__body
-            != module.html
+
+          if (module.config.template === 'color')
+            //- template : color
+            - var moduleText = module.html;
+            - moduleText = moduleText.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g, '')
+            - moduleText = moduleText.replace(/\s+/g, '');
+            - moduleText = moduleText.replace(/pe-color\(/g, '');
+            - var colorCodes = moduleText.split(');');
+            - colorCodes.pop();
+            ul.pepagis-color.pepagis-clearfix.pepagis-reset
+              each colorCode in colorCodes
+                - var color = colorCode.split(',');
+                li.pepagis-color__item(class='pepagis-color-#{color[0]}-#{color[1]}')
+                  p.pepagis-color__scss
+                    | pe-color(#{color[0]}, #{color[1]});
+                  p.pepagis-color__code.js-pepagis-pseudo
+
+          else
+            //- template : normal
+            .pepagis-module__body
+              != module.html
 
     ul.pepagis-module-list.pepagis-reset
       each module, idx in components
@@ -20,6 +40,7 @@ article.pepagis-contents__main-inner
 
     each module, idx in components
       if (module.config.name !== title)
+        //- template : normal
         .pepagis-module
           .pepagis-module__header.pepagis-reset
             h3.pepagis-module__heading2(id=module.config.name) #{module.config.name}

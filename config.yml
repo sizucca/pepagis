@@ -14,7 +14,7 @@ source_type:
   - .css
 
 # The directory that aigis will build to
-dest: ./.tmp_dst
+dest: ./docs
 
 # The assets needed to build the docs
 # You may put doc related assets here too: images, css, etc.
@@ -33,7 +33,7 @@ color_palette: false
 preview_class: 'pepagis-preview'
 
 output_collection:
-  - docs
+  - document
   - library
   - framework
 

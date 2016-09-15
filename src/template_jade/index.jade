@@ -9,11 +9,14 @@ html.pepagis-html(lang='ja')
 
     link(href=root + 'assets/stylesheets/application.css', rel='stylesheet')
     link(href=root + 'assets/stylesheets/highlight/prism.css', rel='stylesheet')
-    link(href=root + 'assets/stylesheets/framework/application.css', rel='stylesheet')
+    link(href=root + 'assets/framework/stylesheets/application.css', rel='stylesheet')
 
     link(href='//fonts.googleapis.com/css?family=Roboto:400,300,500,700', rel='stylesheet')
     link(rel='shortcut icon', href=root + 'assets/favicon.ico', type='image/vnd.microsoft.icon')
     link(rel='icon', href=root + 'assets/favicon.ico', type='image/vnd.microsoft.icon')
+
+    script(src='//code.jquery.com/jquery-2.2.0.min.js')
+    script(src=root + 'assets/javascripts/application.js')
 
   body.pepagis-body
     .pepagis-contents.pepagis-clearfix
@@ -24,3 +27,4 @@ html.pepagis-html(lang='ja')
       .pepagis-contents__side.pepagis-reset
         include ./_contents-side
       .pepagis-contents__shadow
+
