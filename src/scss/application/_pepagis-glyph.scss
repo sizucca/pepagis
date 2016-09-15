@@ -3,29 +3,38 @@
 // ==================================================
 .pepagis-glyph {
   margin: 20px 0;
-  white-space: nowrap;
+  display: table;
 }
 .pepagis-glyph__item {
+  display: table-row;
   @include pe-box-sizing(border-box);
-  margin-bottom: 15px;
-  padding-right: 15px;
-  display: block;
   font-family: $g-font-family-code;
-  font-size: 14px;
+  font-size: 12px;
   background-color: $g-color-white;
 }
-.pepagis-glyph__scss {
-  padding: 8px 10px;
+.pepagis-glyph__demo {
+  display: table-cell;
+  padding: 10px;
+  width: 24px;
+  text-align: center;
+  vertical-align: middle;
+  border-bottom: 1px solid #d7dbdd;
+  &::before {
+    font-size: 24px;
+    line-height: 24px;
+  }
 }
 .pepagis-glyph__code {
-  display: block;
-  padding: 8px 10px;
-  font-size: 12px;
-  line-height: 1.6;
-  &::before {
-    display: block;
-  }
-  &::after {
-    display: block;
-  }
+  padding: 10px;
+  display: table-cell;
+  vertical-align: middle;
+  border-bottom: 1px solid #d7dbdd;
+  border-left: 1px dotted #d7dbdd;
+}
+.pepagis-glyph__class {
+  padding: 10px;
+  vertical-align: middle;
+  display: table-cell;
+  border-left: 1px dotted #d7dbdd;
+  border-bottom: 1px solid #d7dbdd;
 }
