@@ -38,10 +38,12 @@ article.pepagis-contents__main-inner
             ul.pepagis-glyph.pepagis-clearfix.pepagis-reset
               each glyphCode in glyphCodes
                 - var glyph = glyphCode.split(',');
-                li.pepagis-glyph__item(class='pepagis-glyph-#{glyph[0]}-#{glyph[1]}')
-                  p.pepagis-glyph__scss(class='#{glyph[1]}-b-#{glyph[2]}')
-                    | pe-glyph(#{glyph[0]}, #{glyph[2]});
+                li.pepagis-glyph__item
+                  span.pepagis-glyph__demo(class='#{glyph[1]}-b-#{glyph[2]}')
                   p.pepagis-glyph__code
+                    | @include pe-glyph(#{glyph[0]}, #{glyph[2]});
+                  p.pepagis-glyph__class
+                    | .#{glyph[1]}-b-#{glyph[2]};
           else
             //- template : normal
             .pepagis-module__body
