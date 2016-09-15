@@ -15,6 +15,9 @@ html.pepagis-html(lang='ja')
     link(rel='shortcut icon', href=root + 'assets/favicon.ico', type='image/vnd.microsoft.icon')
     link(rel='icon', href=root + 'assets/favicon.ico', type='image/vnd.microsoft.icon')
 
+    script(src='//code.jquery.com/jquery-2.2.0.min.js')
+    script(src=root + 'assets/javascripts/application.js')
+
   body.pepagis-body
     .pepagis-contents.pepagis-clearfix
       .pepagis-contents__main
@@ -24,3 +27,4 @@ html.pepagis-html(lang='ja')
       .pepagis-contents__side.pepagis-reset
         include ./_contents-side
       .pepagis-contents__shadow
+

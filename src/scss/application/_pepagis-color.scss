@@ -1,0 +1,34 @@
+// ==================================================
+// pepagis-color
+// ==================================================
+.pepagis-color {
+  margin: 20px 0;
+}
+.pepagis-color__item {
+  @include pe-box-sizing(border-box);
+  margin-bottom: 15px;
+  padding-right: 15px;
+  display: block;
+  float: left;
+  width: (100% / 3);
+  border-left: 20px solid;
+  border-radius: 20px 0 0 20px;
+  font-family: $g-font-family-code;
+  font-size: 14px;
+}
+.pepagis-color__scss {
+  border-bottom: 1px solid;
+  padding: 8px 10px;
+}
+.pepagis-color__code {
+  display: block;
+  padding: 8px 10px;
+  font-size: 12px;
+  line-height: 1.6;
+  &::before {
+    display: block;
+  }
+  &::after {
+    display: block;
+  }
+}

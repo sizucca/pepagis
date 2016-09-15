@@ -12,6 +12,8 @@
     <link href="//fonts.googleapis.com/css?family=Roboto:400,300,500,700" rel="stylesheet">
     <link rel="shortcut icon" href="../../../../assets/favicon.ico" type="image/vnd.microsoft.icon">
     <link rel="icon" href="../../../../assets/favicon.ico" type="image/vnd.microsoft.icon">
+    <script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="../../../../assets/javascripts/application.js"></script>
   </head>
   <body class="pepagis-body">
     <div class="pepagis-contents pepagis-clearfix">
@@ -22,61 +24,85 @@
               <h2 id="Colors" class="pepagis-module__heading1">Colors</h2>
               <div class="pepagis-module__filepath">/.tmp_src/docs/application.css</div>
             </div>
-            <div class="pepagis-module__body"><div class="pepagis-preview">
-  <ul class="pepagis-colors pepagis-clearfix">
-    <li class="pepagis-colors__item pepagis-color-default-base"></li>
-    <li class="pepagis-colors__item pepagis-color-default-light"></li>
-    <li class="pepagis-colors__item pepagis-color-default-dark"></li>
-    <li class="pepagis-colors__item pepagis-color-success-base"></li>
-    <li class="pepagis-colors__item pepagis-color-success-light"></li>
-    <li class="pepagis-colors__item pepagis-color-success-dark"></li>
-    <li class="pepagis-colors__item pepagis-color-info-base"></li>
-    <li class="pepagis-colors__item pepagis-color-info-light"></li>
-    <li class="pepagis-colors__item pepagis-color-info-dark"></li>
-    <li class="pepagis-colors__item pepagis-color-warning-base"></li>
-    <li class="pepagis-colors__item pepagis-color-warning-light"></li>
-    <li class="pepagis-colors__item pepagis-color-warning-dark"></li>
-    <li class="pepagis-colors__item pepagis-color-danger-base"></li>
-    <li class="pepagis-colors__item pepagis-color-danger-light"></li>
-    <li class="pepagis-colors__item pepagis-color-danger-dark"></li>
-    <li class="pepagis-colors__item pepagis-color-gray-base"></li>
-    <li class="pepagis-colors__item pepagis-color-gray-light"></li>
-    <li class="pepagis-colors__item pepagis-color-gray-dark"></li>
-</ul></div>
-
-<pre><code class="lang-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>ul</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>pepagis-colors pepagis-clearfix<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
-  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>li</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>pepagis-colors__item pepagis-color-default-base<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >></span></span>
-  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>li</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>pepagis-colors__item pepagis-color-default-light<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >></span></span>
-  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>li</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>pepagis-colors__item pepagis-color-default-dark<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >></span></span>
-
-  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>li</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>pepagis-colors__item pepagis-color-success-base<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >></span></span>
-  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>li</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>pepagis-colors__item pepagis-color-success-light<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >></span></span>
-  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>li</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>pepagis-colors__item pepagis-color-success-dark<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >></span></span>
-
-  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>li</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>pepagis-colors__item pepagis-color-info-base<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >></span></span>
-  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>li</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>pepagis-colors__item pepagis-color-info-light<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >></span></span>
-  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>li</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>pepagis-colors__item pepagis-color-info-dark<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >></span></span>
-
-  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>li</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>pepagis-colors__item pepagis-color-warning-base<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >></span></span>
-  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>li</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>pepagis-colors__item pepagis-color-warning-light<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >></span></span>
-  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>li</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>pepagis-colors__item pepagis-color-warning-dark<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >></span></span>
-
-  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>li</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>pepagis-colors__item pepagis-color-danger-base<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >></span></span>
-  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>li</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>pepagis-colors__item pepagis-color-danger-light<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >></span></span>
-  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>li</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>pepagis-colors__item pepagis-color-danger-dark<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >></span></span>
-
-  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>li</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>pepagis-colors__item pepagis-color-gray-base<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >></span></span>
-  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>li</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>pepagis-colors__item pepagis-color-gray-light<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >></span></span>
-  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>li</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>pepagis-colors__item pepagis-color-gray-dark<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >></span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>ul</span><span class="token punctuation" >></span></span>
-</code></pre>
-
-            </div>
+            <ul class="pepagis-color pepagis-clearfix pepagis-reset">
+              <li class="pepagis-color__item pepagis-color-default-base">
+                <p class="pepagis-color__scss">pe-color(default, base);</p>
+                <p class="pepagis-color__code js-pepagis-pseudo"></p>
+              </li>
+              <li class="pepagis-color__item pepagis-color-default-light">
+                <p class="pepagis-color__scss">pe-color(default, light);</p>
+                <p class="pepagis-color__code js-pepagis-pseudo"></p>
+              </li>
+              <li class="pepagis-color__item pepagis-color-default-dark">
+                <p class="pepagis-color__scss">pe-color(default, dark);</p>
+                <p class="pepagis-color__code js-pepagis-pseudo"></p>
+              </li>
+              <li class="pepagis-color__item pepagis-color-success-base">
+                <p class="pepagis-color__scss">pe-color(success, base);</p>
+                <p class="pepagis-color__code js-pepagis-pseudo"></p>
+              </li>
+              <li class="pepagis-color__item pepagis-color-success-light">
+                <p class="pepagis-color__scss">pe-color(success, light);</p>
+                <p class="pepagis-color__code js-pepagis-pseudo"></p>
+              </li>
+              <li class="pepagis-color__item pepagis-color-success-dark">
+                <p class="pepagis-color__scss">pe-color(success, dark);</p>
+                <p class="pepagis-color__code js-pepagis-pseudo"></p>
+              </li>
+              <li class="pepagis-color__item pepagis-color-info-base">
+                <p class="pepagis-color__scss">pe-color(info, base);</p>
+                <p class="pepagis-color__code js-pepagis-pseudo"></p>
+              </li>
+              <li class="pepagis-color__item pepagis-color-info-light">
+                <p class="pepagis-color__scss">pe-color(info, light);</p>
+                <p class="pepagis-color__code js-pepagis-pseudo"></p>
+              </li>
+              <li class="pepagis-color__item pepagis-color-info-dark">
+                <p class="pepagis-color__scss">pe-color(info, dark);</p>
+                <p class="pepagis-color__code js-pepagis-pseudo"></p>
+              </li>
+              <li class="pepagis-color__item pepagis-color-warning-base">
+                <p class="pepagis-color__scss">pe-color(warning, base);</p>
+                <p class="pepagis-color__code js-pepagis-pseudo"></p>
+              </li>
+              <li class="pepagis-color__item pepagis-color-warning-light">
+                <p class="pepagis-color__scss">pe-color(warning, light);</p>
+                <p class="pepagis-color__code js-pepagis-pseudo"></p>
+              </li>
+              <li class="pepagis-color__item pepagis-color-warning-dark">
+                <p class="pepagis-color__scss">pe-color(warning, dark);</p>
+                <p class="pepagis-color__code js-pepagis-pseudo"></p>
+              </li>
+              <li class="pepagis-color__item pepagis-color-danger-base">
+                <p class="pepagis-color__scss">pe-color(danger, base);</p>
+                <p class="pepagis-color__code js-pepagis-pseudo"></p>
+              </li>
+              <li class="pepagis-color__item pepagis-color-danger-light">
+                <p class="pepagis-color__scss">pe-color(danger, light);</p>
+                <p class="pepagis-color__code js-pepagis-pseudo"></p>
+              </li>
+              <li class="pepagis-color__item pepagis-color-danger-dark">
+                <p class="pepagis-color__scss">pe-color(danger, dark);</p>
+                <p class="pepagis-color__code js-pepagis-pseudo"></p>
+              </li>
+              <li class="pepagis-color__item pepagis-color-gray-base">
+                <p class="pepagis-color__scss">pe-color(gray, base);</p>
+                <p class="pepagis-color__code js-pepagis-pseudo"></p>
+              </li>
+              <li class="pepagis-color__item pepagis-color-gray-light">
+                <p class="pepagis-color__scss">pe-color(gray, light);</p>
+                <p class="pepagis-color__code js-pepagis-pseudo"></p>
+              </li>
+              <li class="pepagis-color__item pepagis-color-gray-dark">
+                <p class="pepagis-color__scss">pe-color(gray, dark);</p>
+                <p class="pepagis-color__code js-pepagis-pseudo"></p>
+              </li>
+            </ul>
           </div>
           <ul class="pepagis-module-list pepagis-reset">
           </ul>
         </article>
-        <footer class="pepagis-footer pepagis-reset">Last update at 2016/09/15 20:39</footer>
+        <footer class="pepagis-footer pepagis-reset">Last update at 2016/09/15 23:18</footer>
       </div>
       <div class="pepagis-contents__side pepagis-reset">
         <header class="pepagis-header">
