@@ -30,22 +30,25 @@ npm install --save-dev gulp del gulp-sass gulp-plumber gulp-aigis browser-sync r
 # npm install --save-dev run-sequence
 ```
 
-`gh-pages` ブランチを `pepagis/gh-pages` にチェックアウト。  
-（こうする事で、自動コンパイルされたファイルをそのまま `gh-pages` に コミットできるようになる）
+以下は、GitHub では不要。  
+最新版でない GitHub Enterprise では、以下の方法もある、というメモ。
 
-```sh
-# 【注意】`git worktree` を使うには`git 2.7.0` 以降が必要。
-# cd pepagis
-git worktree add gh-pages gh-pages
-```
-
-以下のディレクトリに移動すると、ブランチが `master` から `gh-pages` に変わっていれば成功。
-
-```sh
-# 【注意】`gh-pages` ディレクトリにある `.git` は絶対に消さない事！（`gh-pages` ごと消すとかダメ、絶対）
-# cd pepagis
-cd gh-pages
-```
+>  `gh-pages` ブランチを `pepagis/docs にチェックアウト。  
+>  （こうする事で、自動コンパイルされたファイルをそのまま `docs` に コミットできるようになる）
+>
+>  ```sh
+>  # 【注意】`git worktree` を使うには`git 2.7.0` 以降が必要。
+>  # cd pepagis
+>  git worktree add gh-pages gh-pages
+>  ```
+>  
+>  以下のディレクトリに移動すると、ブランチが `master` から `gh-pages` に変わっていれば成功。
+>  
+>  ```sh
+>  # 【注意】`docs` ディレクトリにある `.git` は絶対に消さない事！（`docs` ごと消すとかダメ、絶対）
+>  # cd pepagis
+>  cd docs
+>  ```
 
 `gulp` コマンドで、作業開始。
 
