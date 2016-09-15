@@ -11,7 +11,7 @@ var runSequence = require('run-sequence');
 var configPath = './config.yml';
 var srcDir     = './src/';
 var tmpSrcDir  = './.tmp_src/';
-var dstDir     = './gh-pages/';
+var dstDir     = './docs/';
 var tmpDstDir  = './.tmp_dst/';
 
 // watch list
