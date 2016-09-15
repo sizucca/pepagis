@@ -1,0 +1,14 @@
+// ==================================================
+// pepagis-colors
+// ==================================================
+.pepagis-colors {
+  margin-bottom: 15px;
+}
+.pepagis-colors__item {
+  margin-bottom: 15px;
+  padding-right: 15px;
+  display: block;
+  float: left;
+  width: (100% / 3);
+  @include pe-box-sizing(border-box);
+}
