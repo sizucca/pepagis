@@ -27,6 +27,21 @@ article.pepagis-contents__main-inner
                     | pe-color(#{color[0]}, #{color[1]});
                   p.pepagis-color__code.js-pepagis-pseudo
 
+          else if (module.config.template === 'glyph')
+            //- template : glyph
+            - var moduleText = module.html;
+            - moduleText = moduleText.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g, '')
+            - moduleText = moduleText.replace(/\s+/g, '');
+            - moduleText = moduleText.replace(/pe-glyph\(/g, '');
+            - var glyphCodes = moduleText.split(');');
+            - glyphCodes.pop();
+            ul.pepagis-glyph.pepagis-clearfix.pepagis-reset
+              each glyphCode in glyphCodes
+                - var glyph = glyphCode.split(',');
+                li.pepagis-glyph__item(class='pepagis-glyph-#{glyph[0]}-#{glyph[1]}')
+                  p.pepagis-glyph__scss
+                    | pe-glyph(#{glyph[0]}, #{glyph[1]});
+                  p.pepagis-glyph__code
           else
             //- template : normal
             .pepagis-module__body

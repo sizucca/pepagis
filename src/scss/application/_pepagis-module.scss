@@ -96,7 +96,7 @@
     border: 1px solid #d7dbdd;
     border-radius: 3px;
     color: #34495e;
-    font-family: Consolas, "Courier New", Courier, monospace, Monaco, Menlo, "ＭＳ ゴシック", "MS UI Gothic", sans-serif;
+    font-family: $g-font-family-code;
     font-size: 0.86em;
     word-spacing: normal;
     word-wrap: normal;
@@ -110,9 +110,9 @@
     background-color: #F9FAF9;
     color: #f8f8f2;
     color: #858585;
-    font-family: Consolas, "Courier New", Courier, monospace, Monaco, Menlo, "ＭＳ ゴシック", "MS UI Gothic", sans-serif;
+    font-family: $g-font-family-code;
     line-height: 1.5;
-    font-size: 14px;
+    font-size: 13px;
     position: relative;
     padding: 0.5em;
     border-radius: 3px;
@@ -121,7 +121,8 @@
     border: 1px solid #A0A0A0;
   }
   > pre code {
-    font-family: Consolas, "Courier New", Courier, monospace, Monaco, Menlo, "ＭＳ ゴシック", "MS UI Gothic", sans-serif;
+    font-family: $g-font-family-code;
+    font-size: 13px;
   }
   
   // table
