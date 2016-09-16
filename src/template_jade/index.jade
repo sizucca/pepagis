@@ -1,5 +1,5 @@
 doctype html
-html.pepagis-html(lang='ja')
+html.pepagis-html(lang='ja' prefix='og: http://ogp.me/ns#')
   head
     meta(charset='utf-8')
     title #{config.name}
@@ -18,11 +18,10 @@ html.pepagis-html(lang='ja')
     script(src='//code.jquery.com/jquery-2.2.0.min.js')
     script(src=root + 'assets/javascripts/application.js')
 
-    meta(property='og:site_name' content='Pepagis')
+    meta(property='og:title' content='Pepagis')
     meta(property='og:type' content='article')
     meta(property='og:url' content='https://sizucca.github.io/pepagis/')
-    meta(property='og:image' content='https://sizucca.github.io/pepagis/assets/images/pepagis_alpha@2x.png')
-    meta(property='og:title' content='Pepagis')
+    meta(property='og:image' content='https://sizucca.github.io/pepagis/assets/images/pepagis.jpg')
 
   body.pepagis-body
     .pepagis-contents.pepagis-clearfix
