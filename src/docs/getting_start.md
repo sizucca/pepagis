@@ -17,8 +17,8 @@ Styleguide（以降「スタイルガイド」）は、
 
 ### 制作物
 
-* CSS Framework： [Project-SHO](https://github.com/sizucca/pepabo.css-framework/tree/master/project-sho)
 * Styleguide Generator： [Pepagis](https://github.com/sizucca/pepagis)
+* CSS Framework： [Project-SHO](https://github.com/sizucca/pepabo.css-framework/tree/master/project-sho)
 * Sass Mixins Library： [Peparbon](https://github.com/sizucca/peparbon)
 
 
