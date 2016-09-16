@@ -1,7 +1,6 @@
 # Pepagis
 
-元：
-https://github.com/pxgrid/aigis/
+Source: https://github.com/pxgrid/aigis/
 
 ## Pepagis Styleguide
 
@@ -56,17 +55,4 @@ npm install --save-dev gulp del gulp-sass gulp-plumber gulp-aigis browser-sync r
 # cd pepagis
 gulp
 ```
-
-## 設定方法
-
-＜あとで書く！＞
-
-## 使い方
-
-＜あとで書く！＞
-
-gulp で監視しながら  
-https://github.com/sizucca/pepabo.css-framework/tree/master/project_sho/stylesheets/scss/_application/objects/components  
-この辺のコンポーネント触ると反映（といいつつ framework のファイル設計が全然不完全...）
-
 

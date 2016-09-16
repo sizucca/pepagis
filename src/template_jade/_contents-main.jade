@@ -39,10 +39,11 @@ article.pepagis-contents__main-inner
               each glyphCode in glyphCodes
                 - var glyph = glyphCode.split(',');
                 li.pepagis-glyph__item
-                  span.pepagis-glyph__demo(class='#{glyph[1]}-b-#{glyph[2]}')
-                  p.pepagis-glyph__code
+                  span.pepagis-glyph__cell.pepagis-glyph__cell--demo1(class='#{glyph[1]}-b-#{glyph[2]}')
+                  span.pepagis-glyph__cell.pepagis-glyph__cell--demo2(class='#{glyph[1]}-b-#{glyph[2]}')
+                  p.pepagis-glyph__cell.pepagis-glyph__cell--code
                     | @include pe-glyph(#{glyph[0]}, #{glyph[2]});
-                  p.pepagis-glyph__class
+                  p.pepagis-glyph__cell.pepagis-glyph__cell--class
                     | .#{glyph[1]}-b-#{glyph[2]}
           else
             //- template : normal

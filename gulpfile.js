@@ -8,6 +8,7 @@ var browserSync = require('browser-sync');
 var runSequence = require('run-sequence');
 
 // setting path
+// var frameworkDir = '../pepabo.css-framework/project-osan/';
 var frameworkDir = '../pepabo.css-framework/project-sho/';
 var configPath   = './config.yml'; // pepagis 設定ファイル
 var srcDir       = './src/';

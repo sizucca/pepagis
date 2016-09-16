@@ -12,29 +12,38 @@
   font-size: 12px;
   background-color: $g-color-white;
 }
-.pepagis-glyph__demo {
+.pepagis-glyph__cell {
   display: table-cell;
-  padding: 10px;
+  padding: 12px;
+  vertical-align: middle;
+  border-bottom: 1px solid #d7dbdd;
+  white-space: nowrap;
+}
+.pepagis-glyph__cell--demo1 {
   width: 24px;
   text-align: center;
-  vertical-align: middle;
+  color: pe-color(accent, dark);
+  background-color: $g-color-white;
+  &::before {
+    font-size: 24px;
+    line-height: 24px;
+  }
+}
+.pepagis-glyph__cell--demo2 {
+  width: 24px;
+  text-align: center;
+  color: $g-color-white;
+  background-color: pe-color(accent, dark);
   border-bottom: 1px solid #d7dbdd;
   &::before {
     font-size: 24px;
     line-height: 24px;
   }
 }
-.pepagis-glyph__code {
-  padding: 10px;
-  display: table-cell;
-  vertical-align: middle;
-  border-bottom: 1px solid #d7dbdd;
+.pepagis-glyph__cell--code {
   border-left: 1px dotted #d7dbdd;
 }
-.pepagis-glyph__class {
-  padding: 10px;
-  vertical-align: middle;
-  display: table-cell;
+.pepagis-glyph__cell--class {
   border-left: 1px dotted #d7dbdd;
   border-bottom: 1px solid #d7dbdd;
 }
