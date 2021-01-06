@@ -2,9 +2,6 @@
 
 Source: https://github.com/pxgrid/aigis/
 
-## Pepagis Styleguide
-
-https://sizucca.github.io/pepagis/
 
 ## Install 手順
 
